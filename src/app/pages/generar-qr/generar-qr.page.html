@@ -1,0 +1,21 @@
+<ion-header [translucent]="true" >
+    <div class="asistencia-alumno-container">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="seccionID ? volver(seccionID) : null">
+            <ion-icon name="chevron-back-outline" size="large" style="color: white;"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Código QR</ion-title>
+      </ion-toolbar>
+    </div>
+    </ion-header>
+
+<ion-content class="fondo">
+  <div class="contenedor-QR">
+    <qrcode [qrdata]="qrData" [width]="256" [errorCorrectionLevel]="'M'" [elementType]="'svg'"></qrcode>
+  <h1 style="color: black;">Escanea el código QR</h1> 
+  
+
+</div>
+</ion-content>

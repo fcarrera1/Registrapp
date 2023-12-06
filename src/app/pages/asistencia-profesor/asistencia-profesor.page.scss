@@ -1,0 +1,112 @@
+.fondo {
+  --background: url('./../../../assets/img/lilacGradient.jpg') 0/100% 100%;
+}
+.btn{
+  margin-left: 20px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cont-asistencia {
+width: 90%;
+max-width: 400px; 
+margin: 10px auto; 
+}
+
+ion-radio::part(container) {
+width: 30px;
+height: 30px;
+margin-left: 20px;
+border-radius: 10px;
+border: 5px solid #ddd;
+}
+
+ion-radio::part(mark) {
+background: none;
+transition: none;
+transform: none;
+border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+background: #6815ec;
+border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+width: 6px;
+height: 10px;
+
+border-width: 0px 2px 2px 0px;
+border-style: solid;
+border-color: #fff;
+
+transform: rotate(45deg);
+}
+.center{
+margin-top: 10px;
+text-align: center;
+}
+.cen{
+margin-right: 30px;
+}
+
+.btnguardar{
+margin-left: 100px;
+}
+
+.letra{
+font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;
+}
+
+.porcentajeverde{
+  color: green;
+}
+
+.porcentajerojo{
+  color: red;
+}
+
+.centrar{
+  margin-top: 5%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.center-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.header-row,
+.content-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.porcentaje {
+  text-align: center;
+}
+
+.porcentajeverde {
+  color: green;
+}
+
+.porcentajerojo {
+  color: red;
+}
+
+.radio-col {
+  display: flex;
+  align-items: center;
+}
+
+.radio-row {
+  display: flex;
+  gap: 10px; /* Ajusta el espacio entre los botones */
+}

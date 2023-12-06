@@ -1,0 +1,35 @@
+.fondo{
+    --background: url('./../../../assets/img/lilacGradient.jpg') 0/100% 100%;
+  }
+  .asistencia-alumno-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: right;
+   } 
+.btn{
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.letra{
+  font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;
+}
+
+.carta-clases{
+  width: 80%;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.centrar{
+  margin-top: 15%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

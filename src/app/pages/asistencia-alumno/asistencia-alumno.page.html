@@ -1,0 +1,47 @@
+<ion-header [translucent]="true" >
+  <div class="asistencia-alumno-container">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="volver()">
+          <ion-icon name="chevron-back-outline" size="large" style="color: white;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Mi Asistencia</ion-title>
+    </ion-toolbar>
+  </div>
+  </ion-header>
+
+    <ion-content [fullscreen]="true" class="fondo">
+    <div class="centrar">
+      <ion-card class="letra" *ngFor="let clase of clasesAlumno" class="cont-asistencia" color="light">
+        <ion-card-header (click)="toggleCard(clase)">
+          <ion-card-title>
+            {{ clase.nombre }} {{ clase.sigla }} 
+            <br>
+          
+          </ion-card-title>                           
+          <ion-icon [name]="clase.isExpanded ? 'chevron-down' : 'chevron-forward'"></ion-icon>
+        </ion-card-header>
+        <ion-card-content *ngIf="clase.isExpanded">
+          <label class="porcentajenormal" *ngIf="porcentaje>=75">asistencia:</label> <span class="porcentajeverde" *ngIf="porcentaje>=75"> {{ porcentaje }}%</span>
+          <label class="porcentajenormal" *ngIf="porcentaje<75">asistencia:</label> <span class="porcentajerojo" *ngIf="porcentaje<75"> {{ porcentaje }}%</span>
+          <ion-item color="light">
+            
+          <ion-col size="6">Fecha</ion-col>
+          <ion-col size="6" class="ion-text-end">Asistencia</ion-col>
+          </ion-item>
+          <ion-item color="light" *ngFor="let asistencia of asistenciasAlumno">
+          <ion-col size="6">{{ asistencia.fecha }}</ion-col>
+          <ion-col size="6" *ngIf="asistencia.estado == 'presente'" class="ion-text-end" style="color: green;">{{ asistencia.estado }}</ion-col>
+          <ion-col size="6" *ngIf="asistencia.estado == 'ausente'" class="ion-text-end" style="color: red;">{{ asistencia.estado }}</ion-col>
+        </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    </ion-content>
+    
+    
+
+
+
+

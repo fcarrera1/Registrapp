@@ -1,0 +1,48 @@
+.fondo{
+   --background: url('./../../../assets/img/lilacGradient.jpg') 0/100% 100%;
+ }
+ .asistencia-alumno-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+  } 
+
+  .porcentajeverde{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 11px;
+    color: green;
+  }
+
+  .porcentajerojo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 11px;
+    color: red;
+  }
+  .porcentajenormal{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 11px;
+  }
+.letra{
+    font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;
+  }
+  .cont-asistencia {
+width: 90%;
+max-width: 400px; 
+margin: 10px auto; 
+}
+
+.cont-asistencia {
+  width: 90%;
+  max-width: 400px; 
+  margin: 10px auto; 
+  }
+
+  .centrar{
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }

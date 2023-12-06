@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <div class="asistencia-alumno-container">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="volver()">
+          <ion-icon name="chevron-back-outline" size="large" style="color: white;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Asistencia Cursos</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  <div class="centrar">
+    <ion-card class="cont-asistencia" color="dark">
+      <ion-card-header>
+        <ion-card-title class="letra">{{ nombreSeccion }}</ion-card-title>
+        <ion-card-subtitle class="letra">Seccion {{siglas}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-button id="present-alert" color="light" (click)="seccionID ? generarQr(seccionID) : null" class="btn">Generar
+        QR </ion-button>
+
+      <Div>
+        <ion-grid>
+          <ion-row>
+            <ion-col>Nombre alunmo</ion-col>
+            <ion-col style="left: 10px;">%</ion-col>
+            <ion-col>Ausente</ion-col>
+            <ion-col>Presente</ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid class="cen" *ngFor="let alumno of alumnos; let i = index">
+          <ion-row>
+            <ion-col>{{ alumno.pnombre }} {{ alumno.apaterno }}</ion-col>
+            <ion-col class="porcentajeverde" style="right: 15px;" *ngIf="porcentaje[i]>=75;">{{ porcentaje[i] }}%</ion-col>
+            <ion-col class="porcentajerojo" style="right: 15px;" *ngIf="porcentaje[i]<75;">{{ porcentaje[i] }}%</ion-col>
+            <ion-radio-group value="ausente" [(ngModel)]="estadosSeleccionados[i]">
+              <ion-col>
+                <ion-radio value="ausente" style="right: 35px;"></ion-radio>
+              </ion-col>
+              <ion-col>
+                <ion-radio value="presente"></ion-radio>
+              </ion-col>
+            </ion-radio-group>
+          </ion-row>
+        </ion-grid>
+
+        <ion-button (click)="guardarAsistencias()" class="btnguardar" color="light">Guardar asistencia</ion-button>
+        <ion-alert [isOpen]="isAlertOpen" header="Asistencia guardada correctamente" subHeader="" message=""
+          [buttons]="alertButtons" (didDismiss)="setOpen(false)"></ion-alert>
+      </Div>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+.fondo {
+    --background: url('./../../../assets/img/lilacGradient.jpg') 0/100% 100%;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+.logo {
+    width: 130px;
+    height: 130px;
+    background-image: url('./../../../assets/img/logo.png');
+    background-size: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.input{
+    --background: white; 
+    --border-color: black;
+    color: black;
+    --padding-start: 10px;
+}
+
+.letra{
+    font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;
+  }

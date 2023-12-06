@@ -1,0 +1,57 @@
+
+.fondo{
+  --background: url('./../../../assets/img/lilacGradient.jpg') 0/100% 100%;
+}
+.logo{
+margin-top: 2%;
+width: 130px;
+height: 130px;
+border-radius: 50%;
+background-size: cover;
+  
+}
+.alumno-container {
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+} 
+
+.contenedor-cartaLeerQR{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-Asistencia{
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.salida{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  margin-top: 10%;
+  background-size: cover;
+  background-image: url('./../../../assets/img/salida.png');
+  
+}
+
+.letra{
+  font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;
+}
+
+.centrar{
+  margin-top: 10%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

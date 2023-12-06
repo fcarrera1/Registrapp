@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true" class="fondo">
+    <div class="login-container">
+      <div class="logo">
+      </div>
+      <div class="titulo letra">
+        RegistrApp
+      </div>
+      <div>
+      <ion-item *ngIf="mostrarSpinner" lines="none"> 
+        <ion-spinner name="crescent"></ion-spinner>
+      </ion-item>
+    </div>
+    <div class="input">
+        
+      <ion-input  class="input" name="correoElectronico"  [(ngModel)]="correoElectronico" label="correo electronico" label-placement="floating" fill="outline" placeholder="usuario123"></ion-input>
+      <br>
+      <ion-input  class="input" name="contrasena" [(ngModel)]="contrasena" label-placement="floating" label="Contraseña" fill="outline" placeholder="contraseña123" type="password"></ion-input>
+    </div>
+      <ion-button id="present-alert" color="light" (click)="iniciarSesion()" [disabled]="mostrarSpinner">Ingresar</ion-button>
+      
+      
+      <ion-alert
+      [isOpen]="isAlertOpen"
+      header="Error de inicio de sesión"
+      subHeader="Credenciales incorrectas"
+      message="Por favor, verifique su correo electrónico y contraseña."
+      [buttons]="alertButtons"
+      (didDismiss)="setOpen(false)"
+      ></ion-alert>
+
+
+      <ion-label class="forgot-password">
+        <a (click)="recuperar()" style="color: blue;  text-decoration: underline;">¿Olvidaste tu contraseña?</a>
+      </ion-label>
+    </div> 
+</ion-content>

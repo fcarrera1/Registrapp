@@ -1,0 +1,32 @@
+
+<ion-content [fullscreen]="true" class="fondo">
+  <div class="centrar">
+
+  <div class="alumno-container">
+    <h1 style="color: black; font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;" *ngIf ="profesor && profesor.genero === 'M' ">Bienvenido:</h1>
+    <h1 style="color: black; font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;" *ngIf ="profesor && profesor.genero === 'F' ">Bienvenida:</h1>
+    <H2 style="color: black; font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;" *ngIf="profesor">{{ profesor.pnombre }} {{ profesor.snombre }} {{ profesor.apaterno }} {{ profesor.amaterno }}</H2>
+    <div *ngIf="profesor && profesor.foto" class="logo">
+      <img src="./../../../assets/img/{{ profesor.foto }}" alt="">
+  </div>
+
+    <div class="contenedor-carta">
+    <ion-card  (click)="Cursos()" color="dark">
+      <ion-card-header>
+        <ion-card-title style="color: black; font-family: 'Montserrat-VariableFont_wght.ttf', sans-serif;">Lista de cursos</ion-card-title>    
+      </ion-card-header>
+    </ion-card>
+    </div>
+    
+    <div (click)="setOpen(true)" class="salida"></div>
+    <ion-alert
+      [isOpen]="isAlertOpen"
+      header="Cerrar sesión"
+      subHeader="¿Desea cerrar sesión?"
+      message=""
+      [buttons]="alertButtons"
+      (didDismiss)="setOpen(false)"
+    ></ion-alert>
+  </div>
+</div>
+</ion-content>

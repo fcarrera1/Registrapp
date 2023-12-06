@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" >
+  <div class="asistencia-alumno-container">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="volver()">
+          <ion-icon name="chevron-back-outline" size="large" style="color: white;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Recuperar contraseña</ion-title>
+    </ion-toolbar>
+  </div>
+  </ion-header>
+
+<ion-content [fullscreen]="true" class="fondo">
+  
+  <div class="login-container">
+    <div class="logo">
+    </div>
+    <div class="titulo letra">
+      RegistrApp
+    </div>
+    
+    <div>
+      <ion-input class="input" label="Correo electrónico" label-placement="floating" fill="solid" placeholder="ejemplo@gmail.com"></ion-input>
+  </div>
+    <br><br><br>
+
+
+    <ion-button (click)="setOpen(true)" color="light">Recuperar contraseña</ion-button>
+    <ion-alert
+      [isOpen]="isAlertOpen"
+      header="Correo Envíado"
+      subHeader="Hemos envíado un correo para restablecer su contraseña"
+      message=""
+      [buttons]="alertButtons1"
+      (didDismiss)="setOpen(false)"
+    ></ion-alert>
+  </div>
+</ion-content>

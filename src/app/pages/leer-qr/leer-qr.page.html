@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <div class="asistencia-alumno-container">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="volver()">
+          <ion-icon name="chevron-back-outline" size="large" style="color: white;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Leer QR</ion-title>
+    </ion-toolbar>
+
+    <ion-content>
+      <form [formGroup]="formGroup">
+        <ion-button expand="block" (click)="scan()" [disabled]="!isSupported">Escanear QR</ion-button>
+        <ion-button expand="block" (click)="installGoogleBarcodeScannerModule()" [disabled]="!isSupported">Install
+          Google Barcode Scanner Module</ion-button>
+      </form>
+      <ng-container *ngFor="let barcode of barcodes">
+        <ion-card>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="fixed">Bytes</ion-label>
+              <ion-input type="text" readonly [value]="barcode.bytes?.toString() || ''"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Corner Points</ion-label>
+              <ion-input type="text" readonly [value]="barcode.cornerPoints?.toString() || ''"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Display Value</ion-label>
+              <ion-input type="text" readonly [value]="barcode.displayValue"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Format</ion-label>
+              <ion-input type="text" readonly [value]="barcode.format"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Raw Value</ion-label>
+              <ion-input type="text" readonly [value]="barcode.rawValue"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Value Type</ion-label>
+              <ion-input type="text" readonly [value]="barcode.valueType"></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ng-container>
+
+    </ion-content>
